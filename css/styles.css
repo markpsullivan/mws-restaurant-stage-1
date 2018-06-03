@@ -40,8 +40,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #maincontent {
   background-color: #c6c6c6;
-  min-height: 100%;
-  display:grid;
   max-width: 1600px;
   margin: 0 auto;
 }
