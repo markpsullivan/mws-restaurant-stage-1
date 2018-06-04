@@ -176,7 +176,6 @@ nav h1 a {
 #restaurants-list p:first-of-type {
   font-size: 14pt;
 }
-
 #restaurants-list li a {
   background-color: orange;
   border-bottom: 3px solid #eee;
@@ -189,7 +188,6 @@ nav h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
-
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: relative;
@@ -243,7 +241,6 @@ nav h1 a {
 	width: 100%;
 }
 #reviews-container, #restaurant-container  {
-  border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 30px 5px;
 }
