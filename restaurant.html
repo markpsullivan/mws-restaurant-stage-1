@@ -7,58 +7,66 @@
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
-  <link rel="stylesheet" media="(min-width: 768px)" href="css/min-768px.css">
-  <link rel="stylesheet" media="(min-width: 1700px)" href="css/min-1700px.css">
+  <link rel="stylesheet" media="(min-width: 840px)" href="css/min-840px.css">
   <title>Restaurant Info</title>
 </head>
 
 <body class="inside">
-  <!-- Beginning header -->
+  <!--Wrap Content at 1600-->
+  <div id="wrapper">
+  <!-- Header -->
   <header>
-    <!-- Beginning nav -->
+    <!-- Nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1>
+        <a href="/">Restaurant Reviews</a>
+      </h1>
     </nav>
-    <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
+    <!-- Breadcrumb -->
+    <ul id="breadcrumb">
+      <li>
+        <a href="/">Home</a>
+      </li>
     </ul>
-    <!-- End breadcrumb -->
-    <!-- End nav -->
+    <!-- End Breadcrumb -->
+    <!-- End Nav -->
   </header>
-  <!-- End header -->
-
-  <!-- Beginning main -->
+  <!-- End Header -->
+  <!-- Main -->
   <main id="maincontent">
-    <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map"></div>
-    </section>
-    <!-- End map -->
-    <!-- Beginning restaurant -->
+    <!-- Restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
+      <h2 id="restaurant-name"></h2>
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
       <p id="restaurant-address"></p>
       <table id="restaurant-hours"></table>
     </section>
-    <!-- end restaurant -->
-    <!-- Beginning reviews -->
+    <!-- End Restaurant -->
+    <!-- Map -->
+    <section id="map-container">
+        <div id="map"></div>
+      </section>
+      <!-- End Map -->
+    <!-- Reviews -->
     <section id="reviews-container">
       <ul id="reviews-list"></ul>
     </section>
-    <!-- End reviews -->
+    <!-- End Reviews -->
   </main>
-  <!-- End main -->
+  <!-- End Main -->
 
-  <!-- Beginning footer -->
+  <!-- Footer -->
   <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    Copyright (c) 2017
+    <a href="/">
+      <strong>Restaurant Reviews</strong>
+    </a> All Rights Reserved.
   </footer>
-  <!-- End footer -->
-
-  <!-- Beginning scripts -->
+  <!-- End Footer -->
+</div>
+<!--End Wrap Content at 1600 -->  
+  <!-- Scripts -->
   <!-- Database helpers -->
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
