@@ -47,12 +47,11 @@ self.addEventListener('fetch', function(event) {
   var requestUrl = new URL(event.request.url);
 
   if (requestUrl.origin === location.origin) {
-    if (requestUrl.pathname.match('/\.html\.')) {
-      event.respondWith(servePage(event.request));
-      return;
-    }
     if (requestUrl.pathname.startsWith('/img/')) {
       event.respondWith(servePhoto(event.request));
+      return;
+    } else {
+      event.respondWith(servePage(event.request));
       return;
     }
   }
