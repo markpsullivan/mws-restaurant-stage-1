@@ -1,5 +1,5 @@
-var staticCacheName = 'rr-v1';
-var contentImgsCache = 'rr-img';
+var staticCacheName = 'rr-static-v1';
+var contentImgsCache = 'rr-img-v1';
 var allCaches = [
   staticCacheName,
   contentImgsCache
@@ -47,7 +47,10 @@ self.addEventListener('fetch', function(event) {
   var requestUrl = new URL(event.request.url);
 
   if (requestUrl.origin === location.origin) {
-
+    if (requestUrl.pathname.match('/\.html\.')) {
+      event.respondWith(servePage(event.request));
+      return;
+    }
     if (requestUrl.pathname.startsWith('/img/')) {
       event.respondWith(servePhoto(event.request));
       return;
@@ -60,6 +63,21 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
+function servePage(request) {
+  var storageUrl = request.url;
+
+  return caches.open(staticCacheName).then(function(cache) {
+    return cache.match(storageUrl).then(function(response) {
+      if (response) return response;
+
+      return fetch(request).then(function(networkResponse) {
+        cache.put(storageUrl, networkResponse.clone());
+        return networkResponse;
+      });
+    });
+  });
+}
 
 function servePhoto(request) {
   var storageUrl = request.url.replace(/-\d+px\.jpg$/, '');
